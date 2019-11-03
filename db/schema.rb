@@ -13,11 +13,13 @@
 ActiveRecord::Schema.define(version: 2019_11_03_165758) do
 
   create_table "notifications", force: :cascade do |t|
+    t.integer "starter_id"
     t.string "kind"
     t.string "flag"
     t.time "time_logged"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["starter_id"], name: "index_notifications_on_starter_id"
   end
 
   create_table "starters", force: :cascade do |t|

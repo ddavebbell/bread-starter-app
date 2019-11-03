@@ -3,5 +3,11 @@
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+first_starter = Starter.create(name: 'Starty McStarterson', description: 'Starty\'s description', phase: 'First Phase', feeding_time: Time.parse("8:00"))
+
+second_starter = Starter.create(name: 'Olive Starter', description: 'Olive\'s description', phase: 'First Phase', feeding_time: Time.parse("9:00"))
+
+third_starter = Starter.create(name: 'Raisin Starter', description: 'Raisin\'s description', phase: 'First Phase', feeding_time: Time.parse("10:00"))
+
+notification = Notification.create(starter: first_starter, kind: 'Stir')
+second_notification  = Notification.create(starter: second_starter,kind: 'Stir')
