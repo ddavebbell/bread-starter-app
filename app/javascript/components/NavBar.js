@@ -5,7 +5,6 @@ const NavBar = () => {
     <div className="sidenav">
       <a href="#">Starters</a>
       <a href="#">{`Recipes & Directions`}</a>
-      <a href="#">Clients</a>
     </div>
   );
 };

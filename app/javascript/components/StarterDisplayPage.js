@@ -25,6 +25,7 @@ const StarterDisplayPage = ({ getStarters, loading, error, starters }) => {
           ? starters.map(s => (
               <li key={s.id}>
                 <Starter
+                  id={s.id}
                   name={s.name}
                   description={s.description}
                   phase={s.phase}

@@ -1,9 +1,11 @@
 import React from "react";
-
-const Starter = ({ name, description, phase }) => {
+import { Link } from "@reach/router";
+const Starter = ({ name, description, phase, id }) => {
   return (
     <div className="Starter">
-      <h2>{name}</h2>
+      <Link to={`/starters/${id}`}>
+        <h2>{name}</h2>
+      </Link>
       <b>Phase: </b>
       <i>{phase}</i>
       <br />
