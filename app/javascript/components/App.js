@@ -6,14 +6,16 @@ import reducer from "../reducer";
 import { Router, Redirect } from "@reach/router";
 import StarterDisplayPage from "./StarterDisplayPage";
 import StarterShowPage from "./StarterShowPage";
+import Recipes from "./Recipes";
 
 const App = () => {
   return (
     <Provider store={store}>
       <Router>
-        <Redirect noThrow from="/" to="/starters" />
-        <StarterDisplayPage path="/starters" />
+        <Redirect noThrow from="/" to="/starters/" />
+        <StarterDisplayPage path="/starters/" />
         <StarterShowPage path="/starters/:starterId" />
+        <Recipes path="/recipes" />
       </Router>
     </Provider>
   );

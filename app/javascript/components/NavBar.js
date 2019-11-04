@@ -1,10 +1,12 @@
 import React from "react";
+import { Link } from "@reach/router";
+import "./NavBar.css";
 
 const NavBar = () => {
   return (
-    <div className="sidenav">
-      <a href="#">Starters</a>
-      <a href="#">{`Recipes & Directions`}</a>
+    <div id="NavBar">
+      <Link to={`/starters`}>Starters</Link>
+      <Link to={`/recipes`}>{`Recipes & Directions`}</Link>
     </div>
   );
 };

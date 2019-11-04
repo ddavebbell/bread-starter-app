@@ -3,8 +3,9 @@ import { connect } from "react-redux";
 import { getStarters } from "../actions";
 import Starter from "./Starter";
 import NavBar from "./NavBar";
+import "./StarterDisplayPage.css";
 
-const StarterDisplayPage = ({ getStarters, loading, error, starters }) => {
+const StarterDisplayPage = ({ getStarters, starters, loading, error }) => {
   useEffect(() => {
     getStarters();
   }, []);
@@ -16,12 +17,12 @@ const StarterDisplayPage = ({ getStarters, loading, error, starters }) => {
   if (error) {
     return <h2>Error: {error.message}</h2>;
   }
+
   return (
     <div className="StarterDisplayPage">
       <NavBar />
-      <h2>StarterDisplayPage:</h2>
       <ul>
-        {starters
+        {starters && starters.length > 0
           ? starters.map(s => (
               <li key={s.id}>
                 <Starter

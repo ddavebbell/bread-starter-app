@@ -1,0 +1,21 @@
+.Starter {
+  background-color: lightslategray;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 3px;
+  display: block;
+}
+
+.Starter h1 {
+  margin: 0 auto;
+  color: rgb(15, 15, 15);
+  background-color: rgb(255, 255, 255);
+  border-radius: 3px;
+  padding-left: 10px;
+  margin-bottom: 6px;
+}
+
+.Starter li {
+  color: white;
+  padding: 2px;
+}

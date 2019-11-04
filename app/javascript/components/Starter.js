@@ -1,16 +1,23 @@
 import React from "react";
 import { Link } from "@reach/router";
+import "./Starter.css";
+
 const Starter = ({ name, description, phase, id }) => {
   return (
     <div className="Starter">
       <Link to={`/starters/${id}`}>
-        <h2>{name}</h2>
+        <h1>{name}</h1>
+        <ul>
+          <li>
+            <b>Phase: </b>
+            {phase}
+          </li>
+          <li>
+            <b>Desc: </b>
+            {description}
+          </li>
+        </ul>
       </Link>
-      <b>Phase: </b>
-      <i>{phase}</i>
-      <br />
-      <b>Desc: </b>
-      <i>{description}</i>
     </div>
   );
 };
