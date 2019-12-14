@@ -12,10 +12,13 @@
 
 ActiveRecord::Schema.define(version: 2019_11_03_165758) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "notifications", force: :cascade do |t|
-    t.integer "starter_id"
-    t.string "kind"
-    t.string "flag"
+    t.bigint "starter_id"
+    t.text "kind"
+    t.text "flag"
     t.time "time_logged"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -23,17 +26,17 @@ ActiveRecord::Schema.define(version: 2019_11_03_165758) do
   end
 
   create_table "starters", force: :cascade do |t|
-    t.string "name"
+    t.text "name"
     t.text "description"
-    t.string "phase"
+    t.text "phase"
     t.time "feeding_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "starters_notifications", id: false, force: :cascade do |t|
-    t.integer "starter_id"
-    t.integer "notification_id"
+    t.bigint "starter_id"
+    t.bigint "notification_id"
     t.index ["notification_id"], name: "index_starters_notifications_on_notification_id"
     t.index ["starter_id"], name: "index_starters_notifications_on_starter_id"
   end

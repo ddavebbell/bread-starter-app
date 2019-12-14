@@ -1,9 +1,9 @@
 class CreateStarters < ActiveRecord::Migration[5.2]
   def up
     create_table :starters do |t|
-      t.string :name
+      t.text :name
       t.text :description
-      t.string :phase
+      t.text :phase
       t.time :feeding_time
 
       t.timestamps
