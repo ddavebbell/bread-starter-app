@@ -1,7 +1,4 @@
 FactoryBot.define do
-
-  # Factories
-
   factory :starter do 
     name { generate(:starter_name)}
   end

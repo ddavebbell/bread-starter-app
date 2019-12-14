@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   namespace :v1, defaults: { format: 'json' } do
-    resources :starters, only: [:index, :show]
+    resources :starters
   end
 
   get '*page', to: 'static#index', constraints: ->(req) do

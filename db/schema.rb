@@ -17,8 +17,13 @@ ActiveRecord::Schema.define(version: 2019_11_03_165758) do
 
   create_table "notifications", force: :cascade do |t|
     t.bigint "starter_id"
+<<<<<<< HEAD
+    t.string "kind"
+    t.string "flag"
+=======
     t.text "kind"
     t.text "flag"
+>>>>>>> master
     t.time "time_logged"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
