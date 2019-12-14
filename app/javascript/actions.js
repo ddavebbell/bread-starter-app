@@ -37,13 +37,15 @@ export const deleteStarter = id => {
   return dispatch => {
     dispatch({
       type: DELETE_STARTER_REQUEST
-    });
-    destroyStarter(id);
-    dispatch({
-      type: DELETE_STARTER_SUCCESS
-    }).catch(error => {
-      dispatch({ type: DELETE_STARTER_ERROR, error });
-    });
+    })
+      .then(id => destroyStarter(id))
+      .then(
+        dispatch({
+          type: DELETE_STARTER_SUCCESS
+        }).catch(error => {
+          dispatch({ type: DELETE_STARTER_ERROR, error });
+        })
+      );
   };
 };
 

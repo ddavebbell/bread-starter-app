@@ -16,8 +16,8 @@ class V1::StartersController < ApplicationController
 
   def create
     @starter = Starter.new(post_params)
-    if @starter.save
-      redirect_to v1_starters_url
+    if @starter
+      head(:ok)
     else
       head(:unprocessable_entity)
     end
