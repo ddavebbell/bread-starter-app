@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2019_11_03_165758) do
   enable_extension "plpgsql"
 
   create_table "notifications", force: :cascade do |t|
-    t.integer "starter_id"
+    t.bigint "starter_id"
     t.string "kind"
     t.string "flag"
     t.time "time_logged"
@@ -35,8 +35,8 @@ ActiveRecord::Schema.define(version: 2019_11_03_165758) do
   end
 
   create_table "starters_notifications", id: false, force: :cascade do |t|
-    t.integer "starter_id"
-    t.integer "notification_id"
+    t.bigint "starter_id"
+    t.bigint "notification_id"
     t.index ["notification_id"], name: "index_starters_notifications_on_notification_id"
     t.index ["starter_id"], name: "index_starters_notifications_on_starter_id"
   end
